@@ -1,0 +1,55 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.main_div{
+    height: 100%;
+}
+
+.logo{
+    width: 250px;
+}
+
+.logo img{
+    width: 100%;
+}
+
+/* .pdf_icn{
+    height: 60vh;
+} */
+
+/* .pdf_icn i{
+    font-size: 200px;
+} */
+
+.btn_style{
+    background-color: gray;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+
+.custom_btn2{
+    padding: 5px 20px;
+    background-color: #00d20b;
+    color: #fff;
+    border-radius: 10px;
+    font-weight: 500;
+    border: 1px solid  #33a139;
+    transition: .2s;
+}
+
+
+.custom_btn2:hover{
+    background-color: #fff;
+    color: #00d20b;
+}
+
+@media (max-width:575px) {
+    .logo{
+        width: 200px;
+    }
+    
+}

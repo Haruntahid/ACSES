@@ -1,0 +1,91 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.logo{
+    width: 250px;
+}
+
+.logo img{
+    width: 100%;
+}
+
+
+/* hero section  */
+
+
+
+.hero{
+    background-color: #666666;
+    border-radius: 10px;
+}
+
+
+.btn_style{
+    background-color: gray;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+
+
+.custom_btn2{
+    padding: 5px 20px;
+    background-color: #00d20b;
+    color: #fff;
+    border-radius: 10px;
+    font-weight: 500;
+    border: 1px solid  #33a139;
+    transition: .2s;
+}
+
+
+.custom_btn2:hover{
+    background-color: #fff;
+    color: #00d20b;
+}
+
+
+#sig-canvas {
+    border: 2px solid #CCCCCC;
+    border-radius: 15px;
+    cursor: crosshair;
+    background-color: #fff;
+    width: 100%;
+}
+
+ #sig-canvas2{
+    border: 2px solid #CCCCCC;
+    border-radius: 15px;
+    cursor: crosshair;
+    background-color: #fff;
+    width: 100%;
+}
+
+.inputs{
+    width: 100%;
+}
+
+.cstm_btn{
+    padding: 5px 20px;
+    background-color: #00d20b;
+    color: #fff;
+    border-radius: 10px;
+    font-weight: 500;
+    border: 1px solid  #33a139;
+    transition: .2s;
+}
+
+.cstm_btn:hover{
+    background-color: #fff;
+    color: #00d20b;
+}
+
+@media (max-width:575px) {
+    .logo{
+        width: 200px;
+    }
+    
+}

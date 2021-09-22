@@ -1,0 +1,45 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.img_box img{
+    width: 250px;
+    
+}
+
+.txt_box h6{
+    color: #fff;
+    font-weight: 600;
+}
+
+.user{
+    background-color: gray;
+    padding: 20px;
+}
+
+.fa-plus {
+        background-color: #fff;
+        padding: 18px;
+        font-size: 34px;
+    }
+
+table{
+    width: 100%;
+}
+th, td {
+	border: 1px solid black;
+	text-align: center;
+	padding: 5px;
+}
+
+@media (max-width:767px) {
+   .table_div{
+       width: 100%;
+       overflow-x: scroll;
+   } 
+   .img_box img{
+       width: 200px;
+   }   
+}
