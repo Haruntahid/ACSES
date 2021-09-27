@@ -95,7 +95,7 @@
                                 <p>This is a picture of
                                     a lounge room
                                     </p>
-
+                                    <span>4+</span>
                                     <div class="item_no">
                                         <p>Item #: 00001
                                         </p>
@@ -164,8 +164,9 @@
                                     </div>
                             </div>
                         </li>
-                        <li class="col-md-3">
-                            <div class="item_box" style="border: 1px dashed grey;" onclick="newItem()" id="additem" role="button">
+
+                        <li class="col-md-3 ui-state-disabled">
+                            <div class="item_box items5" style="border: 1px dashed grey;" onclick="newItem()" id="additem" role="button">
                                 <i class="fas fa-plus" ></i>
                                     <div class="item_no">
                                         <p class="m-0">NEW ITEM
@@ -173,6 +174,7 @@
                                     </div>
                             </div>
                         </li>
+
                     </ul>
                     </div>
 
@@ -185,32 +187,41 @@
                                 <i class="far fa-trash-alt dlt_btn" onclick="del()"></i>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col-md-6">
+                        
+                        <ul class="row" id="sortable1"  >
+                            <li class="col-md-12" id="effect">
                                 <div class="ddimg">
                                     <img src="img/img1.jpg" alt="">
                                     <i class="far fa-trash-alt del_btn"></i>
                             </div>
-                        </div>
-                            <div class="col-md-6">
+                            </li>
+
+                            <li class="col-md-6">
+
                                 <div class="ddimg">
-                                    <img src="img/img1.jpg" alt="">
+                                    <img src="img/drag3.jpg" alt="">
                                     <i class="far fa-trash-alt del_btn"></i>
                             </div>
-                        </div>
-                            <div class="col-md-6">
+                        </li>
+                            <li class="col-md-6">
                                 <div class="ddimg">
-                                    <img src="img/img1.jpg" alt="">
+                                    <img src="img/drag.jpg" alt="">
                                     <i class="far fa-trash-alt del_btn"></i>
                             </div>
-                        </div>
-                            <div class="col-md-6">
+                        </li>
+                            <li class="col-md-6">
                                 <div class="ddimg">
-                                    <img src="img/img1.jpg" alt="">
+                                    <img src="img/drag1.jpg" alt="">
                                     <i class="far fa-trash-alt del_btn"></i>
                             </div>
-                        </div>
-                        </div>
+                        </li>
+                            <li class="col-md-6">
+                                <div class="ddimg">
+                                    <img src="img/drag2.jpg" alt="">
+                                    <i class="far fa-trash-alt del_btn"></i>
+                            </div>
+                        </li>
+                        </ul>
     
                         <div class="row">
                             <div class="col-md-12 text-center">
@@ -218,8 +229,15 @@
     
                             </div>
                         </div>
-    
+
                         <div class="row">
+                            <div class="col-md-12">
+                                <textarea placeholder="SUBJECT" class="sub_textarea"></textarea>
+                            </div>
+                        </div>
+
+    
+                        <div class="row mt-1">
                             <div class="col-md-12">
                                 <textarea placeholder="REQUIRED" class="req_textarea"></textarea>
                             </div>
@@ -298,24 +316,77 @@
         </div>
       </div>
 
-
-    
-
-
-
-
-
+      
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
         <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
         <script>
             $(function () {
                 $("#sortable").sortable({
-                    revert: true,
-                });
-
+                    items: "li:not(.ui-state-disabled)"
+                }       
+                );
                 $("ul, li").disableSelection();
             });
+
+
+            $(function () {
+                $("#sortable1").sortable({
+                    stop: stopCallback
+                }
+                );
+                $("ul, li").disableSelection();
+            });
+
+
+            function stopCallback(event, ui) {
+                var fst_class = document.getElementById("sortable1").children[0].classList.item(0);
+                var sec_class =  document.getElementById("sortable1").children[0].classList.item(1);
+
+
+                if(fst_class == "col-md-6" || sec_class == "col-md-6" ){
+                            document.getElementById("sortable1").children[0].classList.remove( "col-md-6");
+                            document.getElementById("sortable1").children[0].classList.add( "col-md-12");
+                            
+            
+            
+            
+                var sortable1_length = document.getElementById("sortable1").children.length;
+                
+                
+                for (let i = 1; i < sortable1_length; i++) {
+                        var classes = document.getElementById("sortable1").children[i].classList.item(0);
+                        var classes2 = document.getElementById("sortable1").children[i].classList.item(1);
+                        
+                        if(classes == "col-md-12" || classes2 == "col-md-12" ){
+                            document.getElementById("sortable1").children[i].classList.remove("col-md-12");
+                            document.getElementById("sortable1").children[i].classList.add("col-md-6");
+                        }
+                        else{
+                        console.log("no");
+                }
+
+
+                    }
+                        
+                        
+                        }
+
+
+          
+
+
+
+
+                
+    }
+
+
+
+
+    
+
+
         </script>
         <script>
             function newItem(){
